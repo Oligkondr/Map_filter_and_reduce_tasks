@@ -65,19 +65,10 @@ const team3 = [172, 150, 167, 172, 170];
 // console.log(task7(team1, team3));
 
 // Task 8
-const task8 = (nums) => {
-    return !!(nums.reduce((acc, num) => {
-        if (acc[0].includes(num)) {
-            acc[1] += 1;
-        } else {
-            acc[0].push(num);
-        }
-        return acc;
-    }, [[], 0]))[1];
-};
+const task8 = (nums) => !!(nums.filter((num, i) => num === nums[i + 1])).length
 
-// console.log(task8([1, 2, 3, 4, 6, 6, 3, 8, 9, 0]));
-// console.log(task8([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+console.log(task8([1, 2, 3, 4, 6, 6, 3, 8, 9, 0]));
+console.log(task8([1, 2, 3, 4, 5, 6, 3, 8, 9, 0]));
 
 // Task 9
 const students = [
